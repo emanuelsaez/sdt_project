@@ -7,7 +7,7 @@ cars = pd.read_csv('/workspaces/sdt_project/vehicles_us.csv')
 
 st.header('_Listing duration per condition_')
 
-show_histogram = st.checkbox("Revisualize")
+show_histogram = st.checkbox("Histogram")
 
 if show_histogram:
     cond_days_hist = px.histogram(
