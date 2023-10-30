@@ -19,9 +19,9 @@ if show_histogram:
 else:
     cond_days_scatter = px.scatter(
         cars,
-        x="type",
-        y="price",
-        color="price"
+        x="condition",
+        y="days_listed",
+        color="days_listed"
     )
     st.plotly_chart(cond_days_scatter, theme="streamlit", use_container_width=True)
 
