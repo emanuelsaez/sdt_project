@@ -10,12 +10,12 @@ st.header('_Listing duration per condition_')
 show_histogram = st.checkbox("Revisualize")
 
 if show_histogram:
-        cond_days_hist = px.histogram(
+    cond_days_hist = px.histogram(
         cars,
         x="condition",
         y="days_listed",
     )
-    st.plotly_chart(cars_hist, use_container_width=True)
+    st.plotly_chart(cond_days_hist, use_container_width=True)
 else:
     cond_days_scatter = px.scatter(
         cars,
