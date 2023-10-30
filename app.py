@@ -37,11 +37,11 @@ if show_scatter:
         y="price",
         color="price"
     )
-    st.plotly_chart(cars_scatter, theme="streamlit", use_container_width=True)
+    st.plotly_chart(type_price_scatter, theme="streamlit", use_container_width=True)
 else:
     type_price_hist = px.histogram(
         cars,
         x="type",
         y="price",
     )
-    st.plotly_chart(cars_hist, use_container_width=True)
+    st.plotly_chart(type_price_hist, use_container_width=True)
