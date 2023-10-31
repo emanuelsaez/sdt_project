@@ -3,7 +3,7 @@ import streamlit as st
 import plotly.express as px
 import altair
 
-cars = pd.read_csv('/workspaces/sdt_project/vehicles_us.csv')
+cars = pd.read_csv('/sdt_project/vehicles_us.csv')
 
 st.header('_Listing duration per condition_')
 
