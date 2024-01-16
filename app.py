@@ -6,6 +6,15 @@ import altair
 cars = pd.read_csv('vehicles_us.csv')
 cars['cylinders'] = cars['cylinders'].fillna(cars.groupby(['model', 'model_year'])['cylinders'].transform('median'))
 
+# Filter slider
+st.sidebar.title("Filter Options")
+
+price_range = st.sidebar.slider("Select Price Range", min_value=cars["price"].min(), max_value=cars["price"].max(), value=(cars["price"].min(), cars["price"].max()))
+
+filtered_cars = cars[(cars["price"] >= price_range[0]) & (cars["price"] <= price_range[1])]
+
+# Filter end
+
 cond_days_hist = px.histogram(
         cars,
         x="days_listed",
