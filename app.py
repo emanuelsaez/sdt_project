@@ -20,16 +20,16 @@ filtered_cars = cars[(cars["price"] >= price_range[0]) & (cars["price"] <= price
 # Filter end
 
 cond_days_hist = px.histogram(
-        cars,
-        x="days_listed",
-        y="odometer",
-        color="condition",
-        title='Days Listed Per Condition and Mileage',
-        labels={"days_listed": "Days Listed", "odometer": "Mileage", "condition": "Condition"}
-    )
+    filtered_cars,
+    x="days_listed",
+    y="odometer",
+    color="condition",
+    title='Days Listed Per Condition and Mileage',
+    labels={"days_listed": "Days Listed", "odometer": "Mileage", "condition": "Condition"}
+)
 
 cond_days_scatter = px.scatter(
-    cars,
+    filtered_cars,
     x="days_listed",
     y="odometer",
     color="condition",
@@ -38,7 +38,7 @@ cond_days_scatter = px.scatter(
 )
 
 type_price_scatter = px.scatter(
-    cars,
+    filtered_cars,
     x="type",
     y="price",
     color="condition",
@@ -47,7 +47,7 @@ type_price_scatter = px.scatter(
 )
 
 type_price_hist = px.histogram(
-    cars,
+    filtered_cars,
     x="type",
     y="price",
     color="condition",
