@@ -9,10 +9,14 @@ cars['cylinders'] = cars['cylinders'].fillna(cars.groupby(['model', 'model_year'
 # Filter slider
 st.sidebar.title("Filter Options")
 
-price_range = st.sidebar.slider("Select Price Range", min_value=cars["price"].min(), max_value=cars["price"].max(), value=(cars["price"].min(), cars["price"].max()))
+price_range = st.sidebar.slider(
+    "Select Price Range",
+    min_value=float(cars["price"].min()),
+    max_value=float(cars["price"].max()),
+    value=(float(cars["price"].min()), float(cars["price"].max()))
+)
 
 filtered_cars = cars[(cars["price"] >= price_range[0]) & (cars["price"] <= price_range[1])]
-
 # Filter end
 
 cond_days_hist = px.histogram(
